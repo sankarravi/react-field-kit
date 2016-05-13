@@ -57,7 +57,7 @@ class TextField extends React.Component {
   }
 
   getElement() {
-    return React.findDOMNode(this);
+    return this.refs.input;
   }
 
   onChange(field) {
@@ -69,7 +69,7 @@ class TextField extends React.Component {
 
   render() {
     return (
-      <input type="text"
+      <input ref="input" type="text"
              onBlur={this.props.onBlur.bind(this)} />
     );
   }
