@@ -1,7 +1,7 @@
 const React = require('react');
 const assign = require('object-assign');
 const FieldKit = require('field-kit');
-const TextField = require('./TextField.jsx');
+const TextField = require('./TextField.js');
 
 class CreditCardField extends TextField {
   componentDidMount() {
