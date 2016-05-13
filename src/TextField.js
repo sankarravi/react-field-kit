@@ -62,7 +62,7 @@ class TextField extends React.Component {
 
   onChange(field) {
     // Update component value
-    this.props.rawValue = field.value();
+    // this.props.rawValue = field.value();
 
     if(this.props.onChange) setTimeout(() => this.props.onChange(field));
   }
