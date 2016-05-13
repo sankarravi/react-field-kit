@@ -69,7 +69,7 @@ class TextField extends React.Component {
 
   render() {
     return (
-      <input {...this.props} ref="input" type="text"
+      <input className={this.props.className} ref="input" type="text"
              onBlur={this.props.onBlur.bind(this)} />
     );
   }
