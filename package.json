@@ -45,7 +45,7 @@
     "watchify": "^3.4.0"
   },
   "dependencies": {
-    "field-kit": "^2.1.0",
+    "field-kit": "expedite/field-kit#d9cc64e5ecacd77d5ecfa395e5fd30a8fb32ce6c",
     "object-assign": "^4.0.1"
   },
   "jest": {
