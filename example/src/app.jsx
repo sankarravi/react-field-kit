@@ -1,24 +1,24 @@
 const React = require('react');
-const TextFieldInput = require('./TextFieldInput.jsx');
-const CreditCardFieldInput = require('./CreditCardFieldInput.jsx');
-const ExpiryDateFieldInput = require('./ExpiryDateFieldInput.jsx');
-const PhoneFieldInput = require('./PhoneFieldInput.jsx');
+const Input1 = require('./Input1.jsx');
+const Input2 = require('./Input2.jsx');
+const Input3 = require('./Input3.jsx');
+const Input4 = require('./Input4.jsx');
 
 const App = React.createClass({
   render: function() {
     return (
       <div>
         <h2>TextField</h2>
-        <TextFieldInput />
+        <Input1 />
 
         <h2>CreditCardField</h2>
-        <CreditCardFieldInput />
+        <Input2 />
 
         <h2>ExpiryDateField</h2>
-        <ExpiryDateFieldInput />
+        <Input3 />
 
-        <h2>PhoneField</h2>
-        <PhoneFieldInput />
+        <h2>SocialSecurityNumberField</h2>
+        <Input4 />
       </div>
     )
   }

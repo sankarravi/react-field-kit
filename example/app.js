@@ -47,13 +47,13 @@ var ____Class1=React.Component;for(var ____Class1____Key in ____Class1){if(____C
 
 module.exports = CreditCardFieldInput;
 
-},{"../../src/CreditCardField.jsx":164,"react":163}],2:[function(require,module,exports){
+},{"../../src/TextField.jsx":167,"react":163}],2:[function(require,module,exports){
 const React = require('react');
 const ExpiryDateField = require('../../src/ExpiryDateField.jsx');
 
-var ____Class3=React.Component;for(var ____Class3____Key in ____Class3){if(____Class3.hasOwnProperty(____Class3____Key)){ExpiryDateFieldInput[____Class3____Key]=____Class3[____Class3____Key];}}var ____SuperProtoOf____Class3=____Class3===null?null:____Class3.prototype;ExpiryDateFieldInput.prototype=Object.create(____SuperProtoOf____Class3);ExpiryDateFieldInput.prototype.constructor=ExpiryDateFieldInput;ExpiryDateFieldInput.__superConstructor__=____Class3;
-  function ExpiryDateFieldInput() {"use strict";
-    ____Class3.call(this);
+var ____Class2=React.Component;for(var ____Class2____Key in ____Class2){if(____Class2.hasOwnProperty(____Class2____Key)){Input2[____Class2____Key]=____Class2[____Class2____Key];}}var ____SuperProtoOf____Class2=____Class2===null?null:____Class2.prototype;Input2.prototype=Object.create(____SuperProtoOf____Class2);Input2.prototype.constructor=Input2;Input2.__superConstructor__=____Class2;
+  function Input2() {"use strict";
+    ____Class2.call(this);
     this.state = this.getInitialState();
   }
 
@@ -127,13 +127,13 @@ var ____Class2=React.Component;for(var ____Class2____Key in ____Class2){if(____C
 
 module.exports = PhoneFieldInput;
 
-},{"../../src/PhoneField.jsx":166,"react":163}],4:[function(require,module,exports){
+},{"../../src/CreditCardField.jsx":164,"react":163}],3:[function(require,module,exports){
 const React = require('react');
 const TextField = require('../../src/TextField.jsx');
 
-var ____Class0=React.Component;for(var ____Class0____Key in ____Class0){if(____Class0.hasOwnProperty(____Class0____Key)){TextFieldInput[____Class0____Key]=____Class0[____Class0____Key];}}var ____SuperProtoOf____Class0=____Class0===null?null:____Class0.prototype;TextFieldInput.prototype=Object.create(____SuperProtoOf____Class0);TextFieldInput.prototype.constructor=TextFieldInput;TextFieldInput.__superConstructor__=____Class0;
-  function TextFieldInput() {"use strict";
-    ____Class0.call(this);
+var ____Class1=React.Component;for(var ____Class1____Key in ____Class1){if(____Class1.hasOwnProperty(____Class1____Key)){Input3[____Class1____Key]=____Class1[____Class1____Key];}}var ____SuperProtoOf____Class1=____Class1===null?null:____Class1.prototype;Input3.prototype=Object.create(____SuperProtoOf____Class1);Input3.prototype.constructor=Input3;Input3.__superConstructor__=____Class1;
+  function Input3() {"use strict";
+    ____Class1.call(this);
     this.state = this.getInitialState();
   }
 
@@ -166,28 +166,68 @@ var ____Class0=React.Component;for(var ____Class0____Key in ____Class0){if(____C
 
 module.exports = TextFieldInput;
 
-},{"../../src/TextField.jsx":167,"react":163}],5:[function(require,module,exports){
+},{"../../src/ExpiryDateField.jsx":165,"react":163}],4:[function(require,module,exports){
 const React = require('react');
-const TextFieldInput = require('./TextFieldInput.jsx');
-const CreditCardFieldInput = require('./CreditCardFieldInput.jsx');
-const ExpiryDateFieldInput = require('./ExpiryDateFieldInput.jsx');
-const PhoneFieldInput = require('./PhoneFieldInput.jsx');
+const SocialSecurityNumberField = require('../../src/SocialSecurityNumberField.jsx');
+
+var ____Class3=React.Component;for(var ____Class3____Key in ____Class3){if(____Class3.hasOwnProperty(____Class3____Key)){Input4[____Class3____Key]=____Class3[____Class3____Key];}}var ____SuperProtoOf____Class3=____Class3===null?null:____Class3.prototype;Input4.prototype=Object.create(____SuperProtoOf____Class3);Input4.prototype.constructor=Input4;Input4.__superConstructor__=____Class3;
+  function Input4() {"use strict";
+    ____Class3.call(this);
+    this.state = this.getInitialState();
+  }
+
+  Object.defineProperty(Input4.prototype,"getInitialState",{writable:true,configurable:true,value:function() {"use strict";
+    return {
+      rawValue: '',
+      formattedValue: ''
+    };
+  }});
+
+  Object.defineProperty(Input4.prototype,"onChange",{writable:true,configurable:true,value:function(field) {"use strict";
+    this.setState({
+      rawValue: field.value(),
+      formattedValue: field.text()
+    });
+  }});
+
+  Object.defineProperty(Input4.prototype,"render",{writable:true,configurable:true,value:function() {"use strict";
+    return (
+      React.createElement("div", null, 
+        React.createElement(SocialSecurityNumberField, {value: this.state.rawValue, 
+                                   unfocusedPlaceholder: "Social Security Number", 
+                                   focusedPlaceholder: "123-45-6789", 
+                                   onChange: this.onChange.bind(this)}), 
+        React.createElement("p", null, "RAW: ", this.state.rawValue), 
+        React.createElement("p", null, "FORMATTED: ", this.state.formattedValue)
+      )
+    )
+  }});
+
+
+module.exports = Input4;
+
+},{"../../src/SocialSecurityNumberField.jsx":166,"react":163}],5:[function(require,module,exports){
+const React = require('react');
+const Input1 = require('./Input1.jsx');
+const Input2 = require('./Input2.jsx');
+const Input3 = require('./Input3.jsx');
+const Input4 = require('./Input4.jsx');
 
 const App = React.createClass({displayName: "App",
   render: function() {
     return (
       React.createElement("div", null, 
         React.createElement("h2", null, "TextField"), 
-        React.createElement(TextFieldInput, null), 
+        React.createElement(Input1, null), 
 
         React.createElement("h2", null, "CreditCardField"), 
-        React.createElement(CreditCardFieldInput, null), 
+        React.createElement(Input2, null), 
 
         React.createElement("h2", null, "ExpiryDateField"), 
-        React.createElement(ExpiryDateFieldInput, null), 
+        React.createElement(Input3, null), 
 
-        React.createElement("h2", null, "PhoneField"), 
-        React.createElement(PhoneFieldInput, null)
+        React.createElement("h2", null, "SocialSecurityNumberField"), 
+        React.createElement(Input4, null)
       )
     )
   }
@@ -195,7 +235,7 @@ const App = React.createClass({displayName: "App",
 
 React.render(React.createElement(App, null), document.body);
 
-},{"./CreditCardFieldInput.jsx":1,"./ExpiryDateFieldInput.jsx":2,"./PhoneFieldInput.jsx":3,"./TextFieldInput.jsx":4,"react":163}],6:[function(require,module,exports){
+},{"./Input1.jsx":1,"./Input2.jsx":2,"./Input3.jsx":3,"./Input4.jsx":4,"react":163}],6:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -29281,11 +29321,7 @@ const assign = require('object-assign');
 const FieldKit = require('field-kit');
 const TextField = require('./TextField.jsx');
 
-for(var TextField____Key in TextField){if(TextField.hasOwnProperty(TextField____Key)){CreditCardField[TextField____Key]=TextField[TextField____Key];}}var ____SuperProtoOfTextField=TextField===null?null:TextField.prototype;CreditCardField.prototype=Object.create(____SuperProtoOfTextField);CreditCardField.prototype.constructor=CreditCardField;CreditCardField.__superConstructor__=TextField;
-  function CreditCardField() {"use strict";
-    TextField.call(this);
-  }
-
+for(var TextField____Key in TextField){if(TextField.hasOwnProperty(TextField____Key)){CreditCardField[TextField____Key]=TextField[TextField____Key];}}var ____SuperProtoOfTextField=TextField===null?null:TextField.prototype;CreditCardField.prototype=Object.create(____SuperProtoOfTextField);CreditCardField.prototype.constructor=CreditCardField;CreditCardField.__superConstructor__=TextField;function CreditCardField(){"use strict";if(TextField!==null){TextField.apply(this,arguments);}}
   Object.defineProperty(CreditCardField.prototype,"componentDidMount",{writable:true,configurable:true,value:function() {"use strict";
     ____SuperProtoOfTextField.componentDidMount.call(this);
 
@@ -29333,15 +29369,10 @@ const assign = require('object-assign');
 const FieldKit = require('field-kit');
 const TextField = require('./TextField.jsx');
 
-for(var TextField____Key in TextField){if(TextField.hasOwnProperty(TextField____Key)){ExpiryDateField[TextField____Key]=TextField[TextField____Key];}}var ____SuperProtoOfTextField=TextField===null?null:TextField.prototype;ExpiryDateField.prototype=Object.create(____SuperProtoOfTextField);ExpiryDateField.prototype.constructor=ExpiryDateField;ExpiryDateField.__superConstructor__=TextField;
-  function ExpiryDateField() {"use strict";
-    TextField.call(this);
-  }
-
+for(var TextField____Key in TextField){if(TextField.hasOwnProperty(TextField____Key)){ExpiryDateField[TextField____Key]=TextField[TextField____Key];}}var ____SuperProtoOfTextField=TextField===null?null:TextField.prototype;ExpiryDateField.prototype=Object.create(____SuperProtoOfTextField);ExpiryDateField.prototype.constructor=ExpiryDateField;ExpiryDateField.__superConstructor__=TextField;function ExpiryDateField(){"use strict";if(TextField!==null){TextField.apply(this,arguments);}}
   Object.defineProperty(ExpiryDateField.prototype,"getField",{writable:true,configurable:true,value:function() {"use strict";
     return new FieldKit.ExpiryDateField(this.getElement());
   }});
-
 
 
 ExpiryDateField.propTypes = TextField.getBasePropTypes();
@@ -29356,27 +29387,23 @@ const assign = require('object-assign');
 const FieldKit = require('field-kit');
 const TextField = require('./TextField.jsx');
 
-for(var TextField____Key in TextField){if(TextField.hasOwnProperty(TextField____Key)){PhoneField[TextField____Key]=TextField[TextField____Key];}}var ____SuperProtoOfTextField=TextField===null?null:TextField.prototype;PhoneField.prototype=Object.create(____SuperProtoOfTextField);PhoneField.prototype.constructor=PhoneField;PhoneField.__superConstructor__=TextField;function PhoneField(){"use strict";if(TextField!==null){TextField.apply(this,arguments);}}
-  Object.defineProperty(PhoneField.prototype,"getFormatter",{writable:true,configurable:true,value:function() {"use strict";
-    return new FieldKit.PhoneFormatter();
+for(var TextField____Key in TextField){if(TextField.hasOwnProperty(TextField____Key)){SocialSecurityNumberField[TextField____Key]=TextField[TextField____Key];}}var ____SuperProtoOfTextField=TextField===null?null:TextField.prototype;SocialSecurityNumberField.prototype=Object.create(____SuperProtoOfTextField);SocialSecurityNumberField.prototype.constructor=SocialSecurityNumberField;SocialSecurityNumberField.__superConstructor__=TextField;function SocialSecurityNumberField(){"use strict";if(TextField!==null){TextField.apply(this,arguments);}}
+  Object.defineProperty(SocialSecurityNumberField.prototype,"getFormatter",{writable:true,configurable:true,value:function() {"use strict";
+    return new FieldKit.SocialSecurityNumberFormatter();
   }});
 
 
-PhoneField.propTypes = TextField.getBasePropTypes();
+SocialSecurityNumberField.propTypes = TextField.getBasePropTypes();
 
-PhoneField.defaultProps = TextField.getBaseDefaultProps();
+SocialSecurityNumberField.defaultProps = TextField.getBaseDefaultProps();
 
-module.exports = PhoneField;
+module.exports = SocialSecurityNumberField;
 
 },{"./TextField.jsx":167,"field-kit":7,"object-assign":8,"react":163}],167:[function(require,module,exports){
 const React = require('react');
 const FieldKit = require('field-kit');
 
-var ____Class4=React.Component;for(var ____Class4____Key in ____Class4){if(____Class4.hasOwnProperty(____Class4____Key)){TextField[____Class4____Key]=____Class4[____Class4____Key];}}var ____SuperProtoOf____Class4=____Class4===null?null:____Class4.prototype;TextField.prototype=Object.create(____SuperProtoOf____Class4);TextField.prototype.constructor=TextField;TextField.__superConstructor__=____Class4;
-  function TextField() {"use strict";
-    ____Class4.call(this);
-  }
-
+var ____Class4=React.Component;for(var ____Class4____Key in ____Class4){if(____Class4.hasOwnProperty(____Class4____Key)){TextField[____Class4____Key]=____Class4[____Class4____Key];}}var ____SuperProtoOf____Class4=____Class4===null?null:____Class4.prototype;TextField.prototype=Object.create(____SuperProtoOf____Class4);TextField.prototype.constructor=TextField;TextField.__superConstructor__=____Class4;function TextField(){"use strict";if(____Class4!==null){____Class4.apply(this,arguments);}}
   Object.defineProperty(TextField.prototype,"componentDidMount",{writable:true,configurable:true,value:function() {"use strict";
     this.buildFieldKitField();
     this.field.setValue(this.props.value);
