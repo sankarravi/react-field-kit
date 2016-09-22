@@ -45,7 +45,7 @@
     "watchify": "^3.4.0"
   },
   "dependencies": {
-    "field-kit": "expedite/field-kit#06a4672a27b2a6d22f8e7a1778457e44835f669c",
+    "field-kit": "git://github.com/expedite/field-kit.git#06a4672a27b2a6d22f8e7a1778457e44835f669c",
     "object-assign": "^4.0.1"
   },
   "jest": {
